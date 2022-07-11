@@ -1,5 +1,2 @@
 ﻿  ConsoleApplication1.cpp
-ConsoleApplication1.obj : error LNK2019: unresolved external symbol "public: void __cdecl Shop::displayCPU(void)" (?displayCPU@Shop@@QEAAXXZ) referenced in function "public: void __cdecl Shop::viewProducts(void)" (?viewProducts@Shop@@QEAAXXZ)
-ConsoleApplication1.obj : error LNK2019: unresolved external symbol "public: void __cdecl Shop::displayGPU(void)" (?displayGPU@Shop@@QEAAXXZ) referenced in function "public: void __cdecl Shop::viewProducts(void)" (?viewProducts@Shop@@QEAAXXZ)
-ConsoleApplication1.obj : error LNK2019: unresolved external symbol "public: void __cdecl Shop::displayAPU(void)" (?displayAPU@Shop@@QEAAXXZ) referenced in function "public: void __cdecl Shop::viewProducts(void)" (?viewProducts@Shop@@QEAAXXZ)
-C:\Users\Gabriela\source\repos\myRepository\ConsoleApplication1\x64\Debug\ConsoleApplication1.exe : fatal error LNK1120: 3 unresolved externals
+  ConsoleApplication1.vcxproj -> C:\Users\Gabriela\source\repos\myRepository\ConsoleApplication1\x64\Debug\ConsoleApplication1.exe

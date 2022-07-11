@@ -20,22 +20,30 @@ public:
     void menu();
     void viewProducts();
     void insertUser();
-    void displayUser();
-    
- 
+    //void displayUser();
     void modifyUser();
-    void searchUser();
-    void deleteUser();
+    void displayClientMenu();
+    void displayAdminMenu();
+   
 
-    void displayProducts();
-    void displayCPU();
-    void displayGPU();
-    void displayAPU();
+   // void displayProducts();
+   // void displayCPU();
+   // void displayGPU();
+   // void displayAPU();
     
 };
 
+void Shop::viewProducts() { //TREBUIE SA INCERC SA ELIMIN VOEW PRODUCTS DIN MENIUL DE BAZA ASA INCAT CAND ACCESEZ sa nu mai trebuisca sa scriu id
+
+    Products::showProducts();
+    /*displayProducts();
+    displayCPU();
+    displayGPU();
+    displayAPU();*/
+}
+
 void Shop::menu() {
-menustart:
+    ofstream file_menu("Menu.txt");
     int choice;
    
     system("cls");
@@ -46,12 +54,10 @@ menustart:
     cout << "\t\t\t 2. Insert User" << endl;
     cout << "\t\t\t 3. Display User" << endl;
     cout << "\t\t\t 4. Modify User" << endl;
-    cout << "\t\t\t 5. Search User" << endl;
-    cout << "\t\t\t 6. Delete User" << endl;
-    cout << "\t\t\t 7. Exit" << endl;
+    cout << "\t\t\t 5. Exit" << endl;
 
     cout << "\t\t\t-------------------------------" << endl;
-    cout << "\t\t\tChoose Option:[1/2/3/4/5/6/7]" << endl;
+    cout << "\t\t\tChoose Option:[1/2/3/4/5]" << endl;
     cout << "\t\t\t-------------------------------" << endl;
     cout << "Enter Your Choose: ";
     cin >> choice;
@@ -59,52 +65,36 @@ menustart:
     switch (choice)
     {
     case 1:
-       // viewProducts();
-       ///* do
-       // {
-       //     viewProducts();
-       //     cout << "\n\t\t\t Add another participant(Y,N): ";
-       //     cin >> x;
-       // } while (x == 'y' || x == 'Y');*/
-       // break;
+       viewProducts();
+     
     case 2:
         insertUser();
-      /*  if (roleType == 1)
-        {
-            displayUserClient();
-        }
-        else if (roleType == 2)
-        {
-            displayUserAdmin();
-        }*/
+     
         break;
   
     case 3:
         modifyUser();
         break;
     case 4:
-        searchUser();
-        break;
-    case 5:
-        deleteUser();
-    case 6:
         exit(0);
         break;
 
     default:
-        cout << "\n\t\t\t Invalid choice...Please Try Again..";
+        file_menu << "\n\t\t\t Invalid choice...Please Try Again..";
     }
     //getch();
-    goto menustart;
+    //goto menustart;
+    file_menu.close();
 }
 
-void actionsClient();
-void actionsAdministrator();
+//void actionsClient();
+//void actionsAdministrator();
 
 void Shop::insertUser() {
 
     system("cls");
-    fstream file;
+    ofstream file_UserMenu;
+    file_UserMenu.open("UserMenu.txt", ios::app | ios::out);
     cout << "\n------------------------------------------------------------------------------------------------------------------------";
     cout << "\n-------------------------------------------------Add User Details------------------------------------------------" << endl;
     cout << "\t\t\tEnter User id: ";
@@ -115,109 +105,110 @@ void Shop::insertUser() {
     cin >> password;
     cout << "\t\t\tEnter User roleType: ";
     cin >> roleType;
-    file.open("UserMenu.txt", ios::app | ios::out);
-    file << std::left << std::setw(15) << id << std::left << std::setw(15) << username << std::left << std::setw(15) << password  << std::left << std::setw(15) << roleType << "\n";
+    
+    if (roleType == 1){
+        displayClientMenu();
+    }
+    else if (roleType == 2) {
+        displayAdminMenu();
+    }
+
+
+    file_UserMenu << std::left << std::setw(15) << id << std::left << std::setw(15) << username << std::left << std::setw(15) << password  << std::left << std::setw(15) << roleType << "\n";
    
-    file.close();
+    file_UserMenu.close();
 
 }
 
-void Shop::viewProducts() {
-   
-    displayProducts;
-    displayCPU();
-    displayGPU();
-    displayAPU();
-}
 
 
 
 
 
-void Shop::displayUser() {
+
+void Shop::displayClientMenu() {
     system("cls");
-    if (roleType==1)
-    { 
-    fstream file;
-    int total = 0;
+    
+    ofstream file_ClientMenu;
+    //int total = 0;
     cout << "\n-------------------------Client Menu-------------------------" << endl;
-    file.open("UserMenu.txt", ios::in);
-    if (!file)
-    {
-        cout << "\n\t\t\tNo Data is Present...";
-        file.close();
-    }
-    else
-    {
-        file >> id >> username >> password >> roleType;
-        while (!file.eof())
-        {
-            total++;
-            cout << "\n\n\t\t\t User id: " << id << endl;
-            cout << "\t\t\t Username: " << username << endl;
-            cout << "\t\t\t Password: " << password << endl;
-            cout << "\t\t\t Role type: " << roleType << endl;
-            file >> id >> username >> password >>  roleType;
+    file_ClientMenu.open("ClientMenu.txt", ios::app);
+    cout << "Client";
+    //if (!file_ClientMenu)
+    //{
+    //    cout << "\n\t\t\tNo Data is Present...";
+    //    file_ClientMenu.close();
+    //}
+    //else
+    //{
+    //    file_ClientMenu >> id >> username >> password >> roleType;
+    //    while (!file_ClientMenu.eof())
+    //    {
+    //        total++;
+    //        cout << "\n\n\t\t\t User id: " << id << endl;
+    //        cout << "\t\t\t Username: " << username << endl;
+    //        cout << "\t\t\t Password: " << password << endl;
+    //        cout << "\t\t\t Role type: " << roleType << endl;
+    //        file_ClientMenu >> id >> username >> password >>  roleType;
 
-            actionsClient();
+    //        
 
-            
+    //        
 
-        }
-        if (total == 0)
-        {
-            cout << "\n\t\t\tNo Data Is Present...";
-        }
-    }
-    file.close();
-    }
-    else if (roleType==2)
-    {
-        fstream file;
-        int total = 0;
-        cout << "\n-------------------------Administrator Menu-------------------------" << endl;
-        file.open("UserMenu.txt", ios::in);
-        if (!file)
-        {
-            cout << "\n\t\t\tNo Data is Present...";
-            file.close();
-        }
-        else
-        {
-            file >> id >> username >> password >> roleType;
-            while (!file.eof())
-            {
-                total++;
-                cout << "\n\n\t\t\t User id: " << id << endl;
-                cout << "\t\t\t Username: " << username << endl;
-                cout << "\t\t\t Password: " << password << endl;
-                cout << "\t\t\t Role type: " << roleType << endl;
-                file >> id >> username >> password >> roleType;
+    //    }
+    //    if (total == 0)
+    //    {
+    //        cout << "\n\t\t\tNo Data Is Present...";
+    //    }
+    //actionsClient();
 
-                actionsAdministrator();
+    
+    file_ClientMenu.close();
+ }
+    
 
 
+void Shop::displayAdminMenu() {
+    ofstream file_AdminMenu;
+    // int total = 0;
+    cout << "\n-------------------------Administrator Menu-------------------------" << endl;
+    file_AdminMenu.open("AdminMenu.txt", ios::app);
+    cout << "ADmin";
+    //if (!file_AdminMenu)
+    //{
+    //    cout << "\n\t\t\tNo Data is Present...";
+    //    file_AdminMenu.close();
+    //}
+    //else
+    //{
+    //    file_AdminMenu >> id >> username >> password >> roleType;
+    //    while (!file_AdminMenu.eof())
+    //    {
+    //        total++;
+    //        cout << "\n\n\t\t\t User id: " << id << endl;
+    //        cout << "\t\t\t Username: " << username << endl;
+    //        cout << "\t\t\t Password: " << password << endl;
+    //        cout << "\t\t\t Role type: " << roleType << endl;
+    //        file_AdminMenu >> id >> username >> password >> roleType;
 
-            }
-            if (total == 0)
-            {
-                cout << "\n\t\t\tNo Data Is Present...";
-            }
-        }
-        file.close();
-    }
+    //        //actionsAdministrator();
+
+
+
+    //    }
+    //    if (total == 0)
+    //    {
+    //        cout << "\n\t\t\tNo Data Is Present...";
+    //    }
+    //}
+    file_AdminMenu.close();
 }
 
 void Shop::modifyUser() {
-
+    cout << "Modify user";
 }
 
-void Shop::searchUser() {
 
-}
-void Shop::deleteUser() {
-
-}
 
 
 
@@ -227,18 +218,21 @@ void Shop::deleteUser() {
     Shop project;
     project.menu();
     
-    Products* p =new APU(2,4, "65 Watt", "65");
+ /*   Products* p =new APU(2,4, "65 Watt", "65");
     APU A_Series_APU(4, 8, "Socket FM2", "1280x960");
     
     Products* cpu1 = new CPU (4, 8, "SOCKET");
-    Products* gpu1 = new GPU("1024x728"); 
+    Products* gpu1 = new GPU("1024x728"); */
 
-    displayProducts();
-    displayCPU();
+    //displayProducts();
+   /* displayCPU();
     displayGPU();
-    displayAPU();
+    displayAPU();*/
     
+    Products produse;
+    //produse.showProducts();
         
+
  
         
 
