@@ -228,3 +228,6 @@ we             d              s              1
 we             ds             dc             1              
 we             rd             s              1              
 we             re             we             0              
+we             ds             ds             1              
+0              0              0              0              
+w              e              s              1              
