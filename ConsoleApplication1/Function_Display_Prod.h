@@ -1,24 +1,12 @@
 #pragma once
 #include<iostream>
+#include<fstream>
 using namespace std;
 
-//void displayCPU() {
-//	
-//}
-//
-//void displayGPU() {
-//
-//}
-//
-//void displayAPU() {
-//
-//}
-//
-//
-//void actionsClient() {
-//
-//}
-//
-//void actionsAdministrator() {
-//
-//}
+void actionsClient() {
+
+}
+
+void actionsAdmin() {
+
+}

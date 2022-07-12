@@ -85,12 +85,12 @@ void Shop::menu() {
     file_menu.close();
 }
 
-//void actionsClient();
-//void actionsAdministrator();
+void actionsClient();
+void actionsAdministrator();
 
 void Shop::insertUser() {
 
-   // system("cls");
+
     ofstream file_UserMenu;
     file_UserMenu.open("UserMenu.txt", ios::app | ios::out);
     cout << "\n------------------------------------------------------------------------------------------------------------------------";
@@ -110,18 +110,9 @@ void Shop::insertUser() {
     else if (roleType == 2) {
         displayAdminMenu();
     }
-
-
-   /* file_UserMenu << std::left << std::setw(15) << id << std::left << std::setw(15) << username << std::left << std::setw(15) << password  << std::left << std::setw(15) << roleType << "\n";*/
-   
     file_UserMenu.close();
 
 }
-
-
-
-
-
 
 
 void Shop::displayClientMenu() {
@@ -132,12 +123,12 @@ void Shop::displayClientMenu() {
     cout << "\n-------------------------Client Menu-------------------------" << endl;
     file_ClientMenu.open("ClientMenu.txt", ios::app);
     cout << "Client";
-  
+    actionsClient();
+
     
     file_ClientMenu.close();
  }
     
-
 
 void Shop::displayAdminMenu() {
     ofstream file_AdminMenu;
@@ -145,16 +136,14 @@ void Shop::displayAdminMenu() {
     cout << "\n-------------------------Administrator Menu-------------------------" << endl;
     file_AdminMenu.open("AdminMenu.txt", ios::app);
     cout << "ADmin";
-   
+    actionsAdministrator();
+
     file_AdminMenu.close();
 }
 
 void Shop::modifyUser() {
     cout << "Modify user";
 }
-
-
-
 
 
 
@@ -166,12 +155,6 @@ void Shop::modifyUser() {
     void viewProducts();
     
   
-   
-        
-
- 
-        
-
     return 0;
 }
 
