@@ -1,2 +1,3 @@
 ﻿  ConsoleApplication1.cpp
+C:\Users\Gabriela\source\repos\myRepository\ConsoleApplication1\ConsoleApplication1.cpp(40,9): warning C4102: 'menu': unreferenced label
   ConsoleApplication1.vcxproj -> C:\Users\Gabriela\source\repos\myRepository\ConsoleApplication1\x64\Debug\ConsoleApplication1.exe

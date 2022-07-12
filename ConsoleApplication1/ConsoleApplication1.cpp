@@ -1,5 +1,6 @@
 #include "ShopProducts.h"
 #include "Function_Display_Prod.h"
+#include "Cart.h"
 #include<iostream>
 #include<fstream>
 #include<stdlib.h>
@@ -18,45 +19,38 @@ public:
 public:
 
     void menu();
-  
+    void viewProducts();
     void insertUser();
-    //void displayUser();
-    void modifyUser();
     void displayClientMenu();
     void displayAdminMenu();
    
-
-   // void displayProducts();
-   // void displayCPU();
-   // void displayGPU();
-   // void displayAPU();
-    
 };
 
 
 
-void viewProducts() { //TREBUIE SA INCERC SA ELIMIN VOEW PRODUCTS DIN MENIUL DE BAZA ASA INCAT CAND ACCESEZ sa nu mai trebuisca sa scriu id
+void Shop::viewProducts() { 
 
     Products::showProducts();
+    menu();
    
 }
 
+
 void Shop::menu() {
+    menu:
     ofstream file_menu("Menu.txt");
     int choice;
    
-    system("cls");
+   
     cout << "\t\t\t-------------------------------" << endl;
     cout << "\t\t\t |   THE SHOP   |" << endl;
     cout << "\t\t\t-------------------------------" << endl;
     cout << "\t\t\t 1. View products" << endl;
     cout << "\t\t\t 2. Insert User" << endl;
-    cout << "\t\t\t 3. Display User" << endl;
-    cout << "\t\t\t 4. Modify User" << endl;
-    cout << "\t\t\t 5. Exit" << endl;
+    cout << "\t\t\t 3. Exit" << endl;
 
     cout << "\t\t\t-------------------------------" << endl;
-    cout << "\t\t\tChoose Option:[1/2/3/4/5]" << endl;
+    cout << "\t\t\tChoose Option:[1/2/3]" << endl;
     cout << "\t\t\t-------------------------------" << endl;
     cout << "Enter Your Choose: ";
     cin >> choice;
@@ -72,9 +66,6 @@ void Shop::menu() {
         break;
   
     case 3:
-        modifyUser();
-        break;
-    case 4:
         exit(0);
         break;
 
@@ -116,45 +107,35 @@ void Shop::insertUser() {
 
 
 void Shop::displayClientMenu() {
-    system("cls");
-    
+   // system("cls");
     ofstream file_ClientMenu;
-    //int total = 0;
     cout << "\n-------------------------Client Menu-------------------------" << endl;
     file_ClientMenu.open("ClientMenu.txt", ios::app);
     cout << "Client";
     actionsClient();
+    menu();
 
-    
     file_ClientMenu.close();
  }
     
 
 void Shop::displayAdminMenu() {
     ofstream file_AdminMenu;
-    // int total = 0;
     cout << "\n-------------------------Administrator Menu-------------------------" << endl;
     file_AdminMenu.open("AdminMenu.txt", ios::app);
     cout << "ADmin";
     actionsAdministrator();
+    menu();
 
     file_AdminMenu.close();
 }
 
-void Shop::modifyUser() {
-    cout << "Modify user";
-}
-
-
 
     int main() {
-
     Shop project;
     project.menu();
-    
     void viewProducts();
     
-  
     return 0;
 }
 

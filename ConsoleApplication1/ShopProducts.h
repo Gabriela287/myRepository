@@ -80,6 +80,7 @@ void Products::showProducts() {
 	cout << "1.CPU  \n";
 	cout << "2.GPU  \n";
 	cout << "3.APU  \n";
+	cout << "4.BACK \n";
 	cout << "\nChoose product: ";
 	cin >> chooseProd;
 
@@ -96,7 +97,6 @@ void Products::showProducts() {
 		showAPUs();
 		break;
 	case 4:
-		exit(0);
 
 		break;
 
@@ -131,8 +131,7 @@ void showCPUs() {
 	c->nms = 3;
 	c->memory = "memoryC";
 	c->clk_frequency = 2;
-
-	cout << "CPU prod:\n";
+	cout << "CPU 1 prod:\n";
 	cout << "Cores: " << c->noOfCores << "\n ";
 	cout << "Threads: " << c->noOfThreads << "\n ";
 	cout << "Socket: " << c->socket << "\n ";
@@ -142,6 +141,25 @@ void showCPUs() {
 	cout << "Nms: " << c->nms << "\n ";
 	cout << "Memory: " << c->memory << "\n ";
 	cout<< "Clk frequency: " << c->clk_frequency << "\n ";
+
+	CPU* c2 = new CPU(4, 6, "soc2");
+	c2->weight = 2.2;
+	c2->height = 3.2;
+	c2->TDP = "tdp";
+	c2->nms = 6;
+	c2->memory = "memoryC2";
+	c2->clk_frequency = 23;
+	cout << "CPU 2 prod:\n";
+	cout << "Cores: " << c2->noOfCores << "\n ";
+	cout << "Threads: " << c2->noOfThreads << "\n ";
+	cout << "Socket: " << c2->socket << "\n ";
+	cout << "Weight: " << c2->weight << "\n ";
+	cout << "Height: " << c2->height << "\n ";
+	cout << "TDP: " << c2->TDP << "\n ";
+	cout << "Nms: " << c2->nms << "\n ";
+	cout << "Memory: " << c2->memory << "\n ";
+	cout << "Clk frequency: " << c2->clk_frequency << "\n ";
+
 	file_CPU.close();
 }
 
@@ -157,8 +175,7 @@ void showGPUs() {
 	g->nms = 1;
 	g->memory = "memoryG";
 	g->clk_frequency = 12;
-
-	cout << "GPU prod:\n";
+	cout << "GPU 1 prod:\n";
 	cout << "Resolution: " << g->resolution << "\n";
 	cout << "Weight: " << g->weight << "\n ";
 	cout << "Height: " << g->height << "\n ";
@@ -166,7 +183,25 @@ void showGPUs() {
 	cout << "Nms: " << g->nms << "\n ";
 	cout << "Memory: " << g->memory << "\n ";
 	cout << "Clk frequency: " << g->clk_frequency << "\n ";
+
+	GPU* g2 = new GPU("res2");
+	g2->weight = 2.45;
+	g2->height = 3.1;
+	g2->TDP = "r";
+	g2->nms = 1;
+	g2->memory = "memoryG";
+	g2->clk_frequency = 12;
+	cout << "GPU 2 prod:\n";
+	cout << "Resolution: " << g2->resolution << "\n";
+	cout << "Weight: " << g2->weight << "\n ";
+	cout << "Height: " << g2->height << "\n ";
+	cout << "TDP: " << g2->TDP << "\n ";
+	cout << "Nms: " << g2->nms << "\n ";
+	cout << "Memory: " << g2->memory << "\n ";
+	cout << "Clk frequency: " << g2->clk_frequency << "\n ";
+	
 	file_GPU.close();
+
 }
 void showAPUs() {
 	ofstream file_APU;
@@ -180,8 +215,7 @@ void showAPUs() {
 	a->nms = 5;
 	a->memory = "memoryA";
 	a->clk_frequency = 22;
-
-	cout << "APU prod:\n";
+	cout << "APU 1 prod:\n";
 	cout << "Cores: " << a->noOfCores << "\n ";
 	cout << "Threads: " << a->noOfThreads << "\n ";
 	cout << "Socket: " << a->socket << "\n ";
@@ -192,5 +226,25 @@ void showAPUs() {
 	cout << "Nms: " << a->nms << "\n ";
 	cout << "Memory: " << a->memory << "\n ";
 	cout << "Clk frequency: " << a->clk_frequency << "\n ";
+
+	APU* a2 = new APU(2, 4, "soc", "res");
+	a2->weight = 2.7;
+	a2->height = 4.6;
+	a2->TDP = "h";
+	a2->nms = 5;
+	a2->memory = "memoryA";
+	a2->clk_frequency = 22;
+	cout << "APU 2 prod:\n";
+	cout << "Cores: " << a2->noOfCores << "\n ";
+	cout << "Threads: " << a2->noOfThreads << "\n ";
+	cout << "Socket: " << a2->socket << "\n ";
+	cout << "Resolution: " << a2->resolution << "\n";
+	cout << "Weight: " << a2->weight << "\n ";
+	cout << "Height: " << a2->height << "\n ";
+	cout << "TDP: " << a2->TDP << "\n ";
+	cout << "Nms: " << a2->nms << "\n ";
+	cout << "Memory: " << a2->memory << "\n ";
+	cout << "Clk frequency: " << a2->clk_frequency << "\n ";
+
 	file_APU.close();
 }

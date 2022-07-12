@@ -26,5 +26,8 @@
     <ClInclude Include="Function_Display_Prod.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Cart.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
