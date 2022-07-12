@@ -37,7 +37,7 @@ void Shop::viewProducts() {
 
 
 void Shop::menu() {
-    menu:
+    
     ofstream file_menu("Menu.txt");
     int choice;
    
@@ -113,7 +113,10 @@ void Shop::displayClientMenu() {
     file_ClientMenu.open("ClientMenu.txt", ios::app);
     cout << "Client";
     actionsClient();
+
+    displayActualCart();
     menu();
+ 
 
     file_ClientMenu.close();
  }
@@ -134,7 +137,7 @@ void Shop::displayAdminMenu() {
     int main() {
     Shop project;
     project.menu();
-    void viewProducts();
+   
     
     return 0;
 }
