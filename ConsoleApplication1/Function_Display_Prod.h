@@ -7,6 +7,6 @@ void actionsClient() {
 
 }
 
-void actionsAdmin() {
+void actionsAdministrator() {
 
 }
