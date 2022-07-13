@@ -155,7 +155,8 @@ void newProdCart() {
 
 
 void convertClient() {
-	cout << "Convert client";
+	/*ofstream convertClientToAdmin("Convert client to admin.txt");
+	Shop::clientLogin();*/
 	
 }
 

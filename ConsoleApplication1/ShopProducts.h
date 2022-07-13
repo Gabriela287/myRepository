@@ -208,7 +208,7 @@ void showCPU1() {
 	c->nms = 7;
 	c->memory = "DDR4-3200 MHz";
 	c->clk_frequency = 3.7;
-	cout << "AMD Ryzen 5 5600X:\n";
+	cout << "CPU1: AMD Ryzen 5 5600X\n";
 	cout << "\n";
 	cout << "\t\t\t\t" << "Cores: " << c->noOfCores << "\n ";
 	cout << "\t\t\t\t" << "Threads: " << c->noOfThreads << "\n ";
@@ -229,7 +229,7 @@ void showCPU2() {
 	c2->memory = "DDR4-3200 MHz";
 	c2->clk_frequency = 3.9;
 	cout << "\n-----------------------------------------------------" << endl;
-	cout << "AMD Ryzen 7 5800X:\n";
+	cout << "CPU2: AMD Ryzen 7 5800X\n";
 	cout << "\n";
 	cout << "\t\t\t\t" << "Cores: " << c2->noOfCores << "\n ";
 	cout << "\t\t\t\t" << "Threads: " << c2->noOfThreads << "\n ";
@@ -250,7 +250,7 @@ void showCPU3() {
 	c3->memory = "DDR4-3200 MHz";
 	c3->clk_frequency = 2.1;
 	cout << "\n-----------------------------------------------------" << endl;
-	cout << "AMD Ryzen 5 5500U:\n";
+	cout << "CPU3: AMD Ryzen 5 5500U\n";
 	cout << "\n";
 	cout << "\t\t\t\t" << "Cores: " << c3->noOfCores << "\n ";
 	cout << "\t\t\t\t" << "Threads: " << c3->noOfThreads << "\n ";
@@ -271,7 +271,7 @@ void showGPU1() {
 	g->nms = 7;
 	g->memory = "GDDR5 8GB";
 	g->clk_frequency = 1897;
-	cout << "AMD Radeon RX 6600:\n";
+	cout << "GPU1: AMD Radeon RX 6600\n";
 	cout << "\n";
 	cout << "\t\t\t\t" << "Resolution: " << g->resolution << "\n";
 	cout << "\t\t\t\t" << "Weight: " << g->weight << " lbs" << "\n ";
@@ -290,7 +290,7 @@ void showGPU2() {
 	g2->memory = "GDDR5 8GB";
 	g2->clk_frequency = 1744;
 	cout << "\n-----------------------------------------------------" << endl;
-	cout << "AMD Radeon RX 580:\n";
+	cout << "GPU2: AMD Radeon RX 580\n";
 	cout << "\n";
 	cout << "\t\t\t\t" << "Resolution: " << g2->resolution << "\n";
 	cout << "\t\t\t\t" << "Weight: " << g2->weight << " lbs" << "\n ";
@@ -309,7 +309,7 @@ void showGPU3() {
 	g3->memory = "GDDR6 16 GB";
 	g3->clk_frequency = 1925;
 	cout << "\n-----------------------------------------------------" << endl;
-	cout << "AMD Radeon RX 6950 XT:\n";
+	cout << "GPU3: AMD Radeon RX 6950 XT\n";
 	cout << "\n";
 	cout << "\t\t\t\t" << "Resolution: " << g3->resolution << "\n";
 	cout << "\t\t\t\t" << "Weight: " << g3->weight << " lbs" << "\n ";
@@ -328,7 +328,7 @@ void showAPU1() {
 	a->nms = 12;
 	a->memory = "DDR4-3200";
 	a->clk_frequency = 2.7;
-	cout << "AMD Ryzen Threadripper PRO 5995WX:\n";
+	cout << "APU1: AMD Ryzen Threadripper PRO 5995WX\n";
 	cout << "\n";
 	cout << "\t\t\t\t" << "Cores: " << a->noOfCores << "\n ";
 	cout << "\t\t\t\t" << "Threads: " << a->noOfThreads << "\n ";
@@ -350,7 +350,7 @@ void showAPU2() {
 	a2->memory = "DDR5-4800";
 	a2->clk_frequency = 3.3;
 	cout << "\n-----------------------------------------------------" << endl;
-	cout << "AMD Ryzen 9 6980HX:\n";
+	cout << "APU2: AMD Ryzen 9 6980HX\n";
 	cout << "\n";
 	cout << "\t\t\t\t" << "Cores: " << a2->noOfCores << "\n ";
 	cout << "\t\t\t\t" << "Threads: " << a2->noOfThreads << "\n ";
@@ -372,7 +372,7 @@ void showAPU3() {
 	a3->memory = "DDR4";
 	a3->clk_frequency = 3.2;
 	cout << "\n-----------------------------------------------------" << endl;
-	cout << "AMD RyzenThreadripper PRO 3975WX:\n";
+	cout << "APU3: AMD RyzenThreadripper PRO 3975WX\n";
 	cout << "\n";
 	cout << "\t\t\t\t" << "Cores: " << a3->noOfCores << "\n ";
 	cout << "\t\t\t\t" << "Threads: " << a3->noOfThreads << "\n ";
@@ -397,7 +397,7 @@ void newCPU4() {
 	c4->memory = "DDR4-3200 MHz";
 	c4->clk_frequency = 3.7;
 	cout << "\n-----------------------------------------------------" << endl;
-	cout << "AMD Ryzen 9 5900X:\n";
+	cout << "CPU4: AMD Ryzen 9 5900X\n";
 	cout << "\n";
 	cout << "\t\t\t\t" << "Cores: " << c4->noOfCores << "\n ";
 	cout << "\t\t\t\t" << "Threads: " << c4->noOfThreads << "\n ";
@@ -419,7 +419,7 @@ void newGPU4() {
 	g4->memory = "GDDR6 16 GB";
 	g4->clk_frequency = 1825;
 	cout << "\n-----------------------------------------------------" << endl;
-	cout << "AMD Radeon RX 6800 XT:\n";
+	cout << "GPU4: AMD Radeon RX 6800 XT\n";
 	cout << "\n";
 	cout << "\t\t\t\t" << "Resolution: " << g4->resolution << "\n";
 	cout << "\t\t\t\t" << "Weight: " << g4->weight << " lbs" << "\n ";

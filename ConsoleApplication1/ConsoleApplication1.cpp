@@ -23,9 +23,11 @@ public:
     void insertUser();
     void displayClientMenu();
     void displayAdminMenu();
+
+   
    
 };
-
+//void clientLogin();
 
 
 void Shop::viewProducts() { 
@@ -103,7 +105,16 @@ void Shop::insertUser() {
     }
     file_UserMenu.close();
 
+   
+    
 }
+//void clientLogin() {
+//    if ((id == "id") && (username == "client") && (password == "admin") && (roleType == 1)) {
+//        displayAdminMenu();
+//    }
+//}
+
+
 
 
 void Shop::displayClientMenu() {
